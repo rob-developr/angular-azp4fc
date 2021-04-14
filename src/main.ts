@@ -7,6 +7,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from './app/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+//import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {StepperVerticalExample} from './app/stepper-vertical-example';
 
