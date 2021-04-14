@@ -29,7 +29,7 @@ import {StepperVerticalExample} from './app/stepper-vertical-example';
   declarations: [StepperVerticalExample],
   bootstrap: [StepperVerticalExample],
   providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
   ]
 })
 export class AppModule {}

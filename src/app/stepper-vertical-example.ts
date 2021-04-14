@@ -37,7 +37,7 @@ export class StepperVerticalExample implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
 task: Task = {
-    name: 'Daily',
+    name: 'Indeterminate',
     completed: false,
     color: 'primary',
     subtasks: [
@@ -80,7 +80,8 @@ task: Task = {
       secondCtrl: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
+      thirdCtrl: [''],
+      nextthirdCtrl: []
     });
     this.fourthFormGroup = this._formBuilder.group({
       fourthCtrl: ['', Validators.required]
