@@ -22,7 +22,10 @@ Select a title to set on the current HTML document:
 <mat-vertical-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Enter Referral Test Name</ng-template>
+      <ng-template matStepLabel>
+        <!--<mat-icon>science</mat-icon>-->
+        Enter Referral Test Name
+      </ng-template>
       <mat-form-field class="example-full-width">
         <mat-label>Name of Test or Analysis</mat-label>
         <input matInput placeholder="Test Name" formControlName="firstCtrl" required>
@@ -43,14 +46,14 @@ Select a title to set on the current HTML document:
         <input matInput formControlName="labNameCtrl" placeholder="Laboratory Name" required>
       </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Address</mat-label>
-          <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Address 2</mat-label>
-          <textarea matInput></textarea>
-        </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Address 2</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
 
       <table class="example-full-width" cellspacing="0">
         <tr>
@@ -78,7 +81,7 @@ Select a title to set on the current HTML document:
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
-        </div>
+      </div>
     </form>
   </mat-step>
 
@@ -86,7 +89,15 @@ Select a title to set on the current HTML document:
     <form [formGroup]="thirdFormGroup">
       <ng-template matStepLabel>Analysis Information</ng-template>
       <mat-label>Testing Performed:</mat-label>
-
+      <div>
+        <mat-checkbox class="example-margin"
+                  [checked]="allComplete"
+                  [color]="task.color"
+                  [indeterminate]="someComplete()"
+                  (change)="setAll($event.checked)">
+      {{task.name}}
+    </mat-checkbox>
+      </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
@@ -162,7 +173,8 @@ Select a title to set on the current HTML document:
   <mat-step [stepControl]="tenthFormGroup">
     <form [formGroup]="tenthFormGroup">
       <ng-template matStepLabel>Save or Submit</ng-template>
-      <mat-slide-toggle ngModel name="acceptTerms" required>Accept Terms of Service</mat-slide-toggle>
+      <mat-slide-toggle required>Accept Terms of Service</mat-slide-toggle>
+      <br>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>

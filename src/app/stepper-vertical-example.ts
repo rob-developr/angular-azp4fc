@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ThemePalette} from '@angular/material/core';
+import {MatCheckboxModule } from '@angular/material/checkbox';
 
 export interface Task {
   name: string;
@@ -18,6 +19,7 @@ export interface Task {
   templateUrl: 'stepper-vertical-example.html',
   styleUrls: ['stepper-vertical-example.css']
 })
+
 export class StepperVerticalExample implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
@@ -33,6 +35,42 @@ export class StepperVerticalExample implements OnInit {
   eleventhFormGroup: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {}
+
+task: Task = {
+    name: 'Daily',
+    completed: false,
+    color: 'primary',
+    subtasks: [
+      {name: 'Monday', completed: false, color: 'primary'},
+      {name: 'Tuesday', completed: false, color: 'accent'},
+      {name: 'Wednesday', completed: false, color: 'warn'},
+      {name: 'Thursday', completed: false, color: 'warn'},
+      {name: 'Friday', completed: false, color: 'warn'},
+      {name: 'Saturday', completed: false, color: 'warn'},
+      {name: 'Sunday', completed: false, color: 'warn'}
+    ]
+  };
+
+  allComplete: boolean = false;
+
+  updateAllComplete() {
+    this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
+  }
+
+  someComplete(): boolean {
+    if (this.task.subtasks == null) {
+      return false;
+    }
+    return this.task.subtasks.filter(t => t.completed).length > 0 && !this.allComplete;
+  }
+
+  setAll(completed: boolean) {
+    this.allComplete = completed;
+    if (this.task.subtasks == null) {
+      return;
+    }
+    this.task.subtasks.forEach(t => t.completed = completed);
+  }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -65,40 +103,6 @@ export class StepperVerticalExample implements OnInit {
     this.tenthFormGroup = this._formBuilder.group({
       tenthCtrl: ['', Validators.required]
     });
-  }
-}
-
-export class CheckboxOverviewExample {
-  task: Task = {
-    name: 'Indeterminate',
-    completed: false,
-    color: 'primary',
-    subtasks: [
-      {name: 'Primary', completed: false, color: 'primary'},
-      {name: 'Accent', completed: false, color: 'accent'},
-      {name: 'Warn', completed: false, color: 'warn'}
-    ]
-  };
-
-  allComplete: boolean = false;
-
-  updateAllComplete() {
-    this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
-  }
-
-  someComplete(): boolean {
-    if (this.task.subtasks == null) {
-      return false;
-    }
-    return this.task.subtasks.filter(t => t.completed).length > 0 && !this.allComplete;
-  }
-
-  setAll(completed: boolean) {
-    this.allComplete = completed;
-    if (this.task.subtasks == null) {
-      return;
-    }
-    this.task.subtasks.forEach(t => t.completed = completed);
   }
 }
 
