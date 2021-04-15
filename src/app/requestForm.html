@@ -23,8 +23,8 @@ Select a title to set on the current HTML document:
     <ng-template matStepperIcon="edit">
     <mat-icon>check</mat-icon>
   </ng-template>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
+  <mat-step [stepControl]="testNameFormGroup">
+    <form [formGroup]="testNameFormGroup">
       <ng-template matStepLabel>
         <!--<mat-icon>science</mat-icon>-->
         Enter Referral<br>Test Name
@@ -41,8 +41,8 @@ Select a title to set on the current HTML document:
 
   <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
 
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+  <mat-step [stepControl]="labInfoFormGroup">
+    <form [formGroup]="labInfoFormGroup">
       <ng-template matStepLabel>Laboratory Information /<br> Contact Information</ng-template>
       <mat-form-field class="example-full-width">
         <mat-label>Testing Laboratory Name</mat-label>
@@ -50,12 +50,12 @@ Select a title to set on the current HTML document:
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+        <mat-label>Address 1</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Address 2</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput placeholder="Ex. Suite 200"></textarea>
       </mat-form-field>
 
       <table class="example-full-width" cellspacing="0">
@@ -75,8 +75,8 @@ Select a title to set on the current HTML document:
           <td>
             <mat-form-field class="example-full-width">
               <mat-label>Postal Code or ZIP</mat-label>
-              <input matInput #postalCode maxlength="5" placeholder="Ex. 20001" value="2000">
-              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+              <input matInput #postalCode maxlength="10" placeholder="Ex. 20001" value="2000">
+              <!--<mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>-->
             </mat-form-field>
           </td>
         </tr>
@@ -88,8 +88,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup">
+  <mat-step [stepControl]="testInfoFormGroup">
+    <form [formGroup]="testInfoFormGroup">
       <ng-template matStepLabel>Analysis Information</ng-template>
       <mat-label>Testing Performed:</mat-label>
     <mat-checkbox class="example-margin"
@@ -106,8 +106,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="fourthFormGroup">
-    <form [formGroup]="fourthFormGroup">
+  <mat-step [stepControl]="collectionInfoFormGroup">
+    <form [formGroup]="collectionInfoFormGroup">
       <ng-template matStepLabel>Collection Information</ng-template>
       <div>
         <button mat-button matStepperPrevious>Back</button>
@@ -116,8 +116,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="fifthFormGroup">
-    <form [formGroup]="fifthFormGroup">
+  <mat-step [stepControl]="stabilityInfoFormGroup">
+    <form [formGroup]="stabilityInfoFormGroup">
       <ng-template matStepLabel>Sample Stability<br>Information</ng-template>
 
       <div>
@@ -127,8 +127,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="sixthFormGroup">
-    <form [formGroup]="sixthFormGroup">
+  <mat-step [stepControl]="reportInfoFormGroup">
+    <form [formGroup]="reportInfoFormGroup">
       <ng-template matStepLabel>Reporting Information</ng-template>
 
       <div>
@@ -138,8 +138,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="seventhFormGroup" optional>
-    <form [formGroup]="seventhFormGroup">
+  <mat-step [stepControl]="refRangeFormGroup" optional>
+    <form [formGroup]="refRangeFormGroup">
       <ng-template matStepLabel>Reference Ranges</ng-template>
 
       <div>
@@ -149,8 +149,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="eighthFormGroup">
-    <form [formGroup]="eighthFormGroup">
+  <mat-step [stepControl]="attachmentsFormGroup">
+    <form [formGroup]="attachmentsFormGroup">
       <ng-template matStepLabel>Reference Material / Notes &<br>Attachments</ng-template>
 
       <div>
@@ -160,8 +160,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="ninethFormGroup">
-    <form [formGroup]="ninethFormGroup">
+  <mat-step [stepControl]="reviewFormGroup">
+    <form [formGroup]="reviewFormGroup">
       <ng-template matStepLabel>Review</ng-template>
 
       <div>
@@ -171,8 +171,8 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="tenthFormGroup">
-    <form [formGroup]="tenthFormGroup">
+  <mat-step [stepControl]="submitFormGroup">
+    <form [formGroup]="submitFormGroup">
       <ng-template matStepLabel>Save or Submit</ng-template>
       <mat-slide-toggle required>Accept Terms of Service</mat-slide-toggle>
       <br>
