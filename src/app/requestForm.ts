@@ -29,7 +29,7 @@ export class requestForm implements OnInit {
   sixthFormGroup: FormGroup;
   seventhFormGroup: FormGroup;
   eighthFormGroup: FormGroup;
-  ninthFormGroup: FormGroup;
+  ninethFormGroup: FormGroup;
   tenthFormGroup: FormGroup;
   eleventhFormGroup: FormGroup;
 
@@ -79,7 +79,7 @@ task: Task = {
       secondCtrl: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: [''],
+      thirdCtrl: ['', Validators.required],
       nextthirdCtrl: []
     });
     this.fourthFormGroup = this._formBuilder.group({
@@ -97,7 +97,7 @@ task: Task = {
     this.eighthFormGroup = this._formBuilder.group({
       eighthCtrl: ['', Validators.required]
     });
-    this.ninthFormGroup = this._formBuilder.group({
+    this.ninethFormGroup = this._formBuilder.group({
       ninthCtrl: ['', Validators.required]
     });
     this.tenthFormGroup = this._formBuilder.group({

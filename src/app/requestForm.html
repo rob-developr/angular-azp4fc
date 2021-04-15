@@ -19,7 +19,7 @@ Select a title to set on the current HTML document:
 
 <mat-progress-bar mode="determinate" value="0"></mat-progress-bar>
 
-<mat-horizontal-stepper labelPosition="bottom" [linear]="isLinear" #stepper>
+<mat-horizontal-stepper labelPosition="bottom" [linear]="true" #stepper>
     <ng-template matStepperIcon="edit">
     <mat-icon>check</mat-icon>
   </ng-template>
@@ -138,7 +138,7 @@ Select a title to set on the current HTML document:
     </form>
   </mat-step>
 
-  <mat-step [stepControl]="seventhFormGroup">
+  <mat-step [stepControl]="seventhFormGroup" optional>
     <form [formGroup]="seventhFormGroup">
       <ng-template matStepLabel>Reference Ranges</ng-template>
 
