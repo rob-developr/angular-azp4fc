@@ -90,7 +90,7 @@ Select a title to set on the current HTML document:
 
   <mat-step [stepControl]="testInfoFormGroup">
     <form [formGroup]="testInfoFormGroup">
-      <ng-template matStepLabel>Analysis Information</ng-template>
+      <ng-template matStepLabel>Analysis<br>Information</ng-template>
       <mat-label>Testing Performed:</mat-label>
     <mat-checkbox class="example-margin"
                   [checked]="allComplete"
@@ -108,7 +108,7 @@ Select a title to set on the current HTML document:
 
   <mat-step [stepControl]="collectionInfoFormGroup">
     <form [formGroup]="collectionInfoFormGroup">
-      <ng-template matStepLabel>Collection Information</ng-template>
+      <ng-template matStepLabel>Collection<br>Information</ng-template>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
@@ -129,7 +129,7 @@ Select a title to set on the current HTML document:
 
   <mat-step [stepControl]="reportInfoFormGroup">
     <form [formGroup]="reportInfoFormGroup">
-      <ng-template matStepLabel>Reporting Information</ng-template>
+      <ng-template matStepLabel>Reporting<br>Information</ng-template>
 
       <div>
         <button mat-button matStepperPrevious>Back</button>
