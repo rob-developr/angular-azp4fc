@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ThemePalette} from '@angular/material/core';
-import {MatCheckboxModule } from '@angular/material/checkbox';
 
 export interface Task {
   name: string;
@@ -15,12 +14,12 @@ export interface Task {
  */
 
 @Component({
-  selector: 'stepper-vertical-example',
-  templateUrl: 'stepper-vertical-example.html',
-  styleUrls: ['stepper-vertical-example.css']
+  selector: 'requestForm',
+  templateUrl: 'requestForm.html',
+  styleUrls: ['requestForm.css']
 })
 
-export class StepperVerticalExample implements OnInit {
+export class requestForm implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -106,7 +105,6 @@ task: Task = {
     });
   }
 }
-
 
 /**  Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

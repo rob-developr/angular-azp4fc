@@ -7,10 +7,9 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DemoMaterialModule} from './app/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatCheckboxModule } from '@angular/material/checkbox';
 
-import {StepperVerticalExample} from './app/stepper-vertical-example';
+
+import {requestForm} from './app/requestForm';
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
 // `legacy` and `standard` appearances are scheduled for deprecation in version 10.
@@ -25,9 +24,9 @@ import {StepperVerticalExample} from './app/stepper-vertical-example';
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [StepperVerticalExample],
-  declarations: [StepperVerticalExample],
-  bootstrap: [StepperVerticalExample],
+  entryComponents: [requestForm],
+  declarations: [requestForm],
+  bootstrap: [requestForm],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'standard' } },
   ]
